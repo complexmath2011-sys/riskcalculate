@@ -63,14 +63,14 @@ button {
 <div id="step1">
     <p>Введите количество USDT на одну сделку</p>
     <p>Рекомендуем указывать сумму не более 1-2% от вашего депозита.</p>
-    <input id="riskMoney" type="number" placeholder="Например: $10">
+    <input id="riskMoney" type="number" placeholder="Например: 10">
     <button onclick="nextStep()">Отправить</button>
 </div>
 
 <!-- ШАГ 2 -->
 <div id="step2" class="hidden">
     <p>Введите размер вашего риска (%)</p>
-    <input id="riskPercent" type="number" step="0.01" placeholder="Например: 1,5%">
+    <input id="riskPercent" type="number" step="0.01" placeholder="Например: 1,5">
     <button onclick="calculate()">Рассчитать</button>
 </div>
 
@@ -118,6 +118,7 @@ Telegram.WebApp.ready();
 
 </body>
 </html>
+
 
 
 
