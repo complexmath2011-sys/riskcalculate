@@ -111,15 +111,26 @@ button {
  let riskMoney = 0;
 
         // Функция для показа ошибок в кастомном окне
-        function showError(message) {
-            document.getElementById("errorText").textContent = message;
-            document.getElementById("errorModal").classList.remove("hidden");
-        }
+       function showError(message) {
+    const modal = document.getElementById("errorModal");
+    const text = document.getElementById("errorText");
+    
+    if (modal && text) {
+        text.textContent = message;
+        modal.classList.remove("hidden");
+        
+        // Блокируем прокрутку фона
+        document.body.style.overflow = 'hidden';
+    }
+}
 
-        // Функция для скрытия окна с ошибкой
-        function hideError() {
-            document.getElementById("errorModal").classList.add("hidden");
-        }
+function hideError() {
+    const modal = document.getElementById("errorModal");
+    if (modal) {
+        modal.classList.add("hidden");
+        document.body.style.overflow = ''; // Возвращаем прокрутку
+    }
+}
 
         function nextStep() {
             riskMoney = parseFloat(document.getElementById("riskMoney").value);
@@ -168,6 +179,7 @@ button {
 </div>
 </body>
 </html>
+
 
 
 
